@@ -1,0 +1,28 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+MVI A,0A7H
+STA 2040H
+MVI A,0F3H
+STA 2041H ;{2041H}=F3H
+
+LDA 2040H
+STA 2050H ;{2050H}=A7H
+
+LXI H,2050H
+MOV B,M ;B=A7H
+LXI H,2041H
+MOV A,M ;A=F3H
+LXI H,2050H
+MOV M,A ;{2050H}=F3H
+LXI H,2041H
+MOV M,B ;{2041H}=A7H
+
+hlt

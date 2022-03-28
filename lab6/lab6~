@@ -1,0 +1,23 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+MVI A,013H
+MOV B,A
+STA 2301H
+MVI A,0ADH
+STA 2300H
+MVI C,00H
+DIV: SUB B
+INR C
+JNC DIV
+DCR C
+MOV A,C
+STA 2302H
+hlt

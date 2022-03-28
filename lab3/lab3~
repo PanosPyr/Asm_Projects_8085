@@ -1,0 +1,32 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+MVI A,0BAH
+STA 2040H
+MVI A,0F7H
+STA 2041H
+
+MVI B,0CFH
+ANA B
+STA 2051H
+LDA 2040H
+MVI B,0FAH
+ANA B
+STA 2050H
+
+LXI H,2051H
+SUB M
+
+LXI H,2030H
+MVI M,034H
+
+ADD M
+STA 2052H
+hlt

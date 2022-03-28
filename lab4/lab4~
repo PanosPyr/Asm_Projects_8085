@@ -1,0 +1,25 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+LXI H,2470H
+LXI D,2670H
+MVI B,00H
+TEST1: MOV A,M
+XCHG
+ADI 05H
+MOV M,A
+XCHG
+INX H
+INX D
+INR B
+MOV A,B
+CPI 0CH
+JNZ TEST1
+hlt
